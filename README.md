@@ -1,2 +1,3 @@
 # Fundamentos de Base de Datos con MySQL
-Diplomado en Desarrollo de Aplicaciones Web con Herramientas de Software Libre
+Diplomado Desarrollo de Aplicaciones Web Sobre una Infraestructura Basada en Software Libre
+
