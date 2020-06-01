@@ -56,6 +56,12 @@ int main(int argc, char const *argv[])
         printf("%8s\n",registro[4]);
    }
 
+    // Liberacion de resultados
+    mysql_free_result(resultados);
+    
+    // Cierra conexión
+    mysql_close(conexion);
+    
     printf("Fin de conexión!!!");
     return 0;
 }

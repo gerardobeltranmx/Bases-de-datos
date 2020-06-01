@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <mysql.h>
+
+int main(){
+	MYSQL *conexion; // Conexión a servidor
+	MYSQL_RES *resultados; // Conjunto de resultados
+	MYSQL_ROW registro; // Registro de la tabla
+	char *servidor = "localhost"; // Nombre de Servidor
+	char *usuario = "admin"; //Usuario de la base de datos
+	char *contrasena = "123"; //Contraseña del usuario
+	int puerto = 3306; //Contraseña del usuario
+	char *basedatos = "ahorros"; // Nombre de la base de datos
+	// Conexión a servidor de base de datos
+	if(!mysql_real_connect(conexion, servidor, usuario, contrasena,
+		basedatos, puerto, NULL, 0)){
+		printf("Error: %s\n", mysql_error(conexion));
+		
+	exit(1);
+	}
+
+}
