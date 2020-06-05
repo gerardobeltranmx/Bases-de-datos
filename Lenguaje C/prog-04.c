@@ -7,10 +7,10 @@ int main(int argc, char const *argv[])
     MYSQL_RES *resultados; // Conjunto de resultados
     MYSQL_ROW registro; // Registro de la tabla
     char *servidor = "mysql.miservidor.mx"; // Nombre de Servidor
-    char *usuario = "bancos"; //Usuario de la base de datos
+    char *usuario = "gerardo"; //Usuario de la base de datos
     char *contrasena = "2197abcd*"; //Contraseña del usuario
     int puerto = 3306; //Contraseña del usuario
-    char *basedatos = "test"; // Nombre de la base de datos
+    char *basedatos = "bancos"; // Nombre de la base de datos
      
     //Inicializando variable de conexión
     conexion = mysql_init(NULL);
@@ -23,8 +23,7 @@ int main(int argc, char const *argv[])
     }
 
     // Establece la consulta a realizar
-    char sql[]= "SELECT * FROM cuentas WHERE idcuenta='%s';
-                 SELECT * FROM movimientos where idcuenta = '%s'";
+    char sql[]= "SELECT * FROM cuentas WHERE idcuenta='%s'; SELECT * FROM movimientos where idcuenta = '%s'";
     
     sprintf(sql, sql, argv[1], argv[1]);
 
