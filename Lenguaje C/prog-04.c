@@ -42,6 +42,7 @@ int main(int argc, char const *argv[])
     
     
     // Recupera el registro del cliente
+    
     if ((registro = mysql_fetch_row(resultados)) != NULL){
         printf("IdCuenta: %4s\n ", registro[0]);
         printf("Nombre   : %-35s\n", registro[1]);
@@ -59,12 +60,16 @@ int main(int argc, char const *argv[])
     resultados = mysql_store_result(conexion);
    
     // Recupera el registro del cliente
+
+        printf("%-6s%-10s%-22s%2s%15s\n","Num", "Cliente", "Fecha", "Tipo", "Cantidad");
+   
+
     while ((registro = mysql_fetch_row(resultados)) != NULL){
-        printf("%4s", registro[0]);
-        printf("%4s", registro[1]);
-        printf("%-15s", registro[2]);
+        printf("%-6s", registro[0]);
+        printf("%-10s", registro[1]);
+        printf("%-22s", registro[2]);
         printf("%2s",registro[3]);
-        printf("%8s\n",registro[4]);
+        printf("%15s\n",registro[4]);
    }
 
     // Liberacion de resultados
