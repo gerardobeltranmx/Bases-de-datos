@@ -8,8 +8,10 @@ CREATE TABLE cuentas
   (
 	idcuenta INT PRIMARY KEY AUTO_INCREMENT, 	
 	nombre VARCHAR(40) NOT NULL, 
-	email VARCHAR(30) DEFAULT 'desconocido@sindominio.net',
-	fecha DATETIME DEFAULT NOW(),	
+	correo VARCHAR(30) DEFAULT 'desconocido@sindominio.net',
+	fechaNacimiento DATE NOT NULL,	
+	fechaRegistro DATETIME DEFAULT NOW(),	
+	saldo DECIMAL DEFAULT 0,
 	foto BLOB
    ) ENGINE=INNODB; 
 
@@ -27,10 +29,10 @@ CREATE TABLE movimientos
 
 -- Datos
 
-insert into  cuentas (nombre, email, fecha) VALUES ('Gerardo Medina Lopez', 'gerardo@dominio.mx', '1958-03-15'); 
-insert into  cuentas (nombre, email, fecha) VALUES ('Patricia Herrera Castro', 'patty@dominio.mx', '1948-09-30'); 
-insert into  cuentas (nombre, email, fecha) VALUES ('Claudia Gonzalez Gomez', 'claudia@dominio.mx', '1987-02-22'); 
-insert into  cuentas (nombre, email, fecha) VALUES ('Luis Perez Hernandez', 'luis@dominio.mx', '1986-04-04'); 
+insert into  cuentas (nombre, correo, fechaNacimiento) VALUES ('Gerardo Medina Lopez', 'gerardo@dominio.mx', '1958-03-15'); 
+insert into  cuentas (nombre, correo, fechaNacimiento) VALUES ('Patricia Herrera Castro', 'patty@dominio.mx', '1948-09-30'); 
+insert into  cuentas (nombre, correo, fechaNacimiento) VALUES ('Claudia Gonzalez Gomez', 'claudia@dominio.mx', '1987-02-22'); 
+insert into  cuentas (nombre, correo, fechaNacimiento) VALUES ('Luis Perez Hernandez', 'luis@dominio.mx', '1986-04-04'); 
 
 insert into movimientos (idcuenta, fechamov, tipo, cantidad) values (1,now(),'D', 1000);
 insert into movimientos (idcuenta, fechamov, tipo, cantidad) values (1,now(),'R', 500);
