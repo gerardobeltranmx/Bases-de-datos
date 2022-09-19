@@ -1,2 +1,2 @@
-# Base de Dato de MySQL
+# Bases de Datos de MySQL
 
